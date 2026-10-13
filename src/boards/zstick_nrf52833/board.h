@@ -25,42 +25,40 @@
 #ifndef _ZSTICK_NRF52833_H
 #define _ZSTICK_NRF52833_H
 
+#define UICR_REGOUT0_VALUE UICR_REGOUT0_VOUT_3V3
+
 /*------------------------------------------------------------------*/
 /* LED
  *------------------------------------------------------------------*/
-#define LEDS_NUMBER          2
-#define LED_PRIMARY_PIN      PINNUM(1, 4)
-#define LED_SECONDARY_PIN    PINNUM(0, 25)
-#define LED_STATE_ON         1
-
-#define LED_NEOPIXEL         PINNUM(0, 7)
-#define NEOPIXELS_NUMBER     1
-#define BOARD_RGB_BRIGHTNESS 0x040404
+#define LEDS_NUMBER     1
+#define LED_PRIMARY_PIN PINNUM(0, 20) // Blue
+#define LED_STATE_ON    1
 
 /*------------------------------------------------------------------*/
 /* BUTTON
  *------------------------------------------------------------------*/
 #define BUTTON_DFU     PINNUM(0, 18) // unusable: RESET
-#define BUTTON_DFU_OTA PINNUM(1, 1)  // no connection on E73-2G4M08S1E Module
+#define BUTTON_DFU_OTA PINNUM(0, 24) // no connection
 #define BUTTON_PULL    NRF_GPIO_PIN_PULLUP
+
 
 //--------------------------------------------------------------------+
 // BLE OTA
 //--------------------------------------------------------------------+
-#define BLEDIS_MANUFACTURER "BlueMicro"
-#define BLEDIS_MODEL        "BlueMicro 833"
+#define BLEDIS_MANUFACTURER "@zzzz"
+#define BLEDIS_MODEL        "ZStick nRF52833"
 
 //--------------------------------------------------------------------+
-// USB PID from openmoko:
-// PR https://github.com/openmoko/openmoko-usb-oui/pull/34
+// USB
 //--------------------------------------------------------------------+
-#define USB_DESC_VID          0x1d50
-#define USB_DESC_UF2_PID      0x616f
-#define USB_DESC_CDC_ONLY_PID 0x616f
+#define USB_DESC_VID          0x2886
+#define USB_DESC_UF2_PID      0x0044
+#define USB_DESC_CDC_ONLY_PID 0x0044
 
-#define UF2_PRODUCT_NAME      "ZStick"
-#define UF2_VOLUME_LABEL      "ZSTICK"
-#define UF2_BOARD_ID          "nRF52833-ZStick"
-#define UF2_INDEX_URL         "http://bluemicro.jpconstantineau.com/"
+//------------- UF2 -------------//
+#define UF2_PRODUCT_NAME "ZStick nRF52833"
+#define UF2_VOLUME_LABEL "ZSTICK-BOOT"
+#define UF2_BOARD_ID     "ZStick-nrf52833"
+#define UF2_INDEX_URL    " "
 
 #endif // _BLUEMICRO_H
